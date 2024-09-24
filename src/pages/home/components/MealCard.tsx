@@ -1,9 +1,21 @@
-import { FavoriteBorderOutlined, FavoriteOutlined } from "@mui/icons-material";
-import { Box, IconButton, Stack, Typography } from "@mui/material";
-import { useState } from "react";
+//import { FavoriteBorderOutlined, FavoriteOutlined } from "@mui/icons-material";
+import { Box, Button, Stack, Typography } from "@mui/material";
+//import { useState } from "react";
 
-const MealCard = ({ img, name }: { img: string; name: string }) => {
-  const [isFavorite, setIsFavorite] = useState(false);
+const MealCard = ({
+  img,
+  name,
+  vote,
+  onClick,
+}: // poster,
+{
+  img: string;
+  name: string;
+  vote: number;
+  onClick: () => void;
+  // poster: string;
+}) => {
+  //const [isFavorite, setIsFavorite] = useState(false);
   return (
     <Box
       sx={{
@@ -33,9 +45,13 @@ const MealCard = ({ img, name }: { img: string; name: string }) => {
         alignItems="center"
       >
         <Typography variant="body2">{name}</Typography>
-        <IconButton onClick={() => setIsFavorite(!isFavorite)} color="error">
+        <Typography variant="body2">{vote}</Typography>
+        <Button sx={{ width: "20px", borderRadius: "5px" }} onClick={onClick}>
+          Detail
+        </Button>
+        {/* <IconButton onClick={() => setIsFavorite(!isFavorite)} color="error">
           {isFavorite ? <FavoriteOutlined /> : <FavoriteBorderOutlined />}
-        </IconButton>
+        </IconButton> */}
       </Stack>
     </Box>
   );

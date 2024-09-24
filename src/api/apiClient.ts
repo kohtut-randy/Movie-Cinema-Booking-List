@@ -1,7 +1,7 @@
 import axios, { AxiosError, isAxiosError } from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "https://www.themealdb.com/api/json/v1/1",
+  baseURL: "https://api.themoviedb.org/3/",
 });
 
 const apiClient = async (
@@ -14,6 +14,11 @@ const apiClient = async (
       method,
       url: reqUrl,
       data,
+      headers: {
+        accept: "application/json",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMWUyY2Q5NjE0NTkyNGVhYzZlYTAzZmQxNGVjZGE0ZCIsIm5iZiI6MTcyNzA4NTExMi4xODk3MzcsInN1YiI6IjY2ZjEzODgwNTgzYzU2Y2RiMTI1ZWI4ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.bNQ9p_J9aa_COoleNvPw55a8jL677m3adQtCZzJYN40",
+      },
     });
     return resp.data;
   } catch (err) {

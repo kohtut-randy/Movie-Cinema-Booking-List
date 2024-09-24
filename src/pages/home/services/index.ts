@@ -4,6 +4,12 @@ export const getMealsByFirstLetter = async (letter: string) => {
   return await apiClient("get", `/search.php?f=${letter}`);
 };
 
-export const getMealsByAreaName = async (areaName: string) => {
-  return await apiClient("get", `/filter.php?a=${areaName}`);
+export const getMovieList = async () => {
+  return await apiClient("get", `/movie/upcoming?language=en-US&page=1`);
+};
+export const getMoviePopularList = async () => {
+  return await apiClient("get", `/movie/popular?language=en-US&page=1`);
+};
+export const getMovieListByid = async (id: string) => {
+  return await apiClient("get", `/movie/${id}language=en-US&page=1`);
 };

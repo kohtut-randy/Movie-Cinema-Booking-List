@@ -1,10 +1,12 @@
 import { Box, CircularProgress, Grid, Typography } from "@mui/material";
-import { useGetMealsByAreaName } from "./hooks";
+import { useGetMovieList } from "./hooks";
 import MealCard from "./components/MealCard";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
-  const { data, isLoading } = useGetMealsByAreaName("American");
-
+  const navigate = useNavigate();
+  const { data, isLoading } = useGetMovieList();
+  const basic = "https://image.tmdb.org/t/p/original";
   if (isLoading) {
     return (
       <Box
@@ -22,13 +24,18 @@ const HomePage = () => {
   return (
     <Box py={4}>
       <Typography variant="h5" fontWeight={500} mb={2}>
-        American Meals
+        Movies
       </Typography>
       <Grid container spacing={2}>
-        {data?.meals?.map((meal) => {
+        {data?.results?.map((results) => {
           return (
-            <Grid key={meal.idMeal} item xs={12} sm={6} md={3} lg={2}>
-              <MealCard img={meal.strMealThumb} name={meal.strMeal} />
+            <Grid key={results.id} item xs={12} sm={6} md={3} lg={2}>
+              <MealCard
+                img={basic + results.backdrop_path}
+                name={results.original_title}
+                vote={results.vote_average}
+                onClick={() => navigate(`detail/${results.id}`)}
+              />
             </Grid>
           );
         })}

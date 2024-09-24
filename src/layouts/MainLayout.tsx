@@ -1,4 +1,4 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import { NavLink, Outlet } from "react-router-dom";
 
 const MainLayout = () => {
@@ -9,13 +9,18 @@ const MainLayout = () => {
         direction="row"
         gap={2}
         mb={2}
-        sx={{ background: "#ba000d" }}
+        border={1}
         borderRadius={"5px"}
         py={2}
         px={2}
       >
+        <img
+          style={{ width: "50px" }}
+          src="https://png.pngtree.com/element_our/20190603/ourmid/pngtree-movie-board-icon-image_1455346.jpg"
+          alt=""
+        />
         <Box component={NavLink} to="/">
-          <Typography sx={{ color: "white" }}>Home</Typography>
+          Home
         </Box>
         <Box component={NavLink} to="/popular">
           Popular

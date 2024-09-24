@@ -42,4 +42,21 @@ type CastList = {
   profile_path: string;
   character: string;
 };
-export type { TMealResponse, TMovieListResponse, MovieList, TCastResponse };
+type Videos = {
+  name: string;
+  key: string;
+  size: number;
+  type: string;
+  official: boolean;
+};
+type TVideoResponse = {
+  results: Array<Videos>;
+};
+export type {
+  TMealResponse,
+  TMovieListResponse,
+  MovieList,
+  TCastResponse,
+  Videos,
+  TVideoResponse,
+};

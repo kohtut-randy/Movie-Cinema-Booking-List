@@ -19,3 +19,9 @@ export const getMoviePopularList = async () => {
 export const getMovieCastList = async (id: string) => {
   return await apiClient("get", `/movie/${id}/credits?language=en-US&page=1`);
 };
+export const getMovieVideo = async (id: string) => {
+  return await apiClient(
+    "get",
+    `/movie/${id}/videos?append_to_response=videos,credits,release_dates`
+  );
+};

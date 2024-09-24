@@ -4,8 +4,14 @@ import {
   getMealsByFirstLetter,
   getMoviePopularList,
   getMovieListByid,
+  getMovieCastList,
 } from "../services";
-import { MovieList, TMealResponse, TMovieListResponse } from "../models";
+import {
+  MovieList,
+  TCastResponse,
+  TMealResponse,
+  TMovieListResponse,
+} from "../models";
 
 export const useGetMealsByFirstLetter = (letter: string) => {
   return useQuery<TMealResponse>({
@@ -38,6 +44,15 @@ export const useGetMovieDetail = (id?: string) => {
     queryKey: ["Byid", id],
     queryFn: async () => {
       return getMovieListByid(id ?? "");
+    },
+  });
+};
+
+export const useGetMovieCast = (id?: string) => {
+  return useQuery<TCastResponse>({
+    queryKey: ["Cast", id],
+    queryFn: async () => {
+      return getMovieCastList(id ?? "");
     },
   });
 };

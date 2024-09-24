@@ -28,4 +28,18 @@ type MovieList = {
 type TMovieListResponse = {
   results: Array<MovieList>;
 };
-export type { TMealResponse, TMovieListResponse, MovieList };
+
+type TCastResponse = {
+  cast: Array<CastList>;
+};
+
+type CastList = {
+  adult: boolean;
+  gender: number;
+  id: 819;
+  original_name: string;
+  popularity: number;
+  profile_path: string;
+  character: string;
+};
+export type { TMealResponse, TMovieListResponse, MovieList, TCastResponse };

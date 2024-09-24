@@ -5,6 +5,7 @@ import AboutPage from "../pages/about/AboutPage";
 import MainLayout from "../layouts/MainLayout";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import DetailPage from "../pages/home/DetailPage";
+import CastPage from "../pages/sample/CastPage";
 
 const router = createHashRouter([
   {
@@ -26,6 +27,10 @@ const router = createHashRouter([
       {
         path: "/detail/:id",
         element: <DetailPage />,
+      },
+      {
+        path: "/casts/:id",
+        element: <CastPage />,
       },
     ],
   },

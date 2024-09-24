@@ -24,7 +24,7 @@ const SamplePage = () => {
   return (
     <Box py={4}>
       <Typography variant="h5" fontWeight={500} mb={2}>
-        Movies
+        Popular
       </Typography>
       <Grid container spacing={2}>
         {data?.results?.map((results) => {
@@ -34,7 +34,7 @@ const SamplePage = () => {
                 img={basic + results.backdrop_path}
                 name={results.original_title}
                 vote={results.vote_average}
-                onClick={() => navigate(`detail/${results.id}`)}
+                onClick={() => navigate(`/casts/${results.id}`)}
               />
             </Grid>
           );

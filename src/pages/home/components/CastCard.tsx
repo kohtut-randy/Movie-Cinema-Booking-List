@@ -38,6 +38,8 @@ const CastCard = ({
         alignItems="center"
       >
         <Typography variant="body2">{orgname}</Typography>
+        <Typography variant="body2"> as </Typography>
+
         <Typography variant="body2">{characterName}</Typography>
       </Stack>
     </Box>

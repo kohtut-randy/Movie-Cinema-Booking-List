@@ -5,11 +5,11 @@ export const getMealsByFirstLetter = async (letter: string) => {
 };
 
 export const getMovieList = async () => {
-  return await apiClient("get", `/movie/upcoming?language=en-US&page=1`);
+  return await apiClient("get", `/movie/upcoming?language=en-US&page=2`);
 };
 
 export const getMovieListByid = async (id: string) => {
-  return await apiClient("get", `/movie/${id}language=en-US&page=1`);
+  return await apiClient("get", `/movie/${id}language=en-US`);
 };
 
 export const getMoviePopularList = async () => {
@@ -17,7 +17,7 @@ export const getMoviePopularList = async () => {
 };
 
 export const getMovieCastList = async (id: string) => {
-  return await apiClient("get", `/movie/${id}/credits?language=en-US&page=1`);
+  return await apiClient("get", `/movie/${id}/credits?language=en-US`);
 };
 export const getMovieVideo = async (id: string) => {
   return await apiClient(

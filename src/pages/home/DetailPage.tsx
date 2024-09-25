@@ -17,7 +17,9 @@ const DetailPage = () => {
 
   return (
     <>
-      <Button onClick={() => navigate(`/`)}>Back</Button>
+      <Button sx={{ border: 1 }} onClick={() => navigate(`/`)}>
+        Back
+      </Button>
       <Box
         sx={{
           display: "flex",
@@ -65,7 +67,7 @@ const DetailPage = () => {
         </Typography>
       </Box>
       <Grid container spacing={2}>
-        {castData?.cast?.map((cast) => {
+        {castData?.cast?.slice(0, 10).map((cast) => {
           return (
             <Grid key={cast.id} item xs={12} sm={6} md={3} lg={2}>
               <CastCard
